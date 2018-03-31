@@ -2,21 +2,34 @@ var wins = 0;
 var losses = 0;
 var guessLeft = 9;
 var guessSoFar = [];
-var computerChoice = 'abcdefghijklmnopqrstuvwxyz'.split('');
+var computerChoice = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 var userGuess=[];
+//var keysOnPad= event.keyCode(65-90);
 document.getElementById('you-win').style.display = 'none';
 document.getElementById('you-lose').style.display = 'none';
 
 //Setting variables for game, wins losses guesses left and guesses so far is empty but it will be filled with users guess.
 
 document.onkeyup = function(event){
-var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+var userGuess = String.fromCharCode(event.keyCode).toUpperCase();
 var computerGuess = computerChoice[Math.floor(Math.random()
     * computerChoice.length)];
     //adding users input into array using charcode, lowercase makes sure only the lowercase letter is logged (regardless if they choose upper will be same)  varComputer guess loops through a random number which chooses a letter in that array. This should be re-written, its calling for the computers choice to change each time a key is pushed instead of at the beginning of the game and holding it through all 9 turns.
-
     guessSoFar.push(userGuess);
 
+
+
+
+   /* if (userGuess==keysOnPad){
+        guessSoFar.push(userGuess);
+    }
+
+    else{
+        alert("pick a letter");
+        
+        
+    }*/
+    
 
 
 
@@ -45,16 +58,31 @@ var computerGuess = computerChoice[Math.floor(Math.random()
 //if the users guess matches the computers a reset is run and 1 is added to wins, if the user doesnt match guesses left goes down 1 and if the user gets to 0 guesses the reset is run as well.
 
 
-
+/*
 var node = document.createElement("text");                
 var textnode = document.createTextNode(" "+userGuess+" , ");  
 node.appendChild(textnode);                              
-document.getElementById("guess-far").appendChild(node);     
-function clearGuesses(){
-    document.getElementById("guess-far").innerHTML="GUESSES SO FAR:";
-    
-} 
+document.getElementById("empty").appendChild(node);     
 
+
+function clearGuesses(){
+    document.getElementById("empty").innerHTML="";
+
+
+    
+
+*/
+
+var paragraph = document.getElementById("empty");
+var text = document.createTextNode(" "+userGuess+" ");
+paragraph.appendChild(text);
+
+
+
+function clearGuesses(){
+    document.getElementById("empty").innerHTML="";
+
+}
 
 
 
@@ -99,7 +127,7 @@ function loser(){
 //couldnt get repeat letters to stop writing to document, will also re-visit later :(
 //computer guess isnt staying logged for the full 9 turns, its changing each time a key is pressed
 
+
+
+
 }
-
-
-
