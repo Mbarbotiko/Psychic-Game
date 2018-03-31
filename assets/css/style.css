@@ -1,0 +1,42 @@
+body{
+    background-image: url("../images/background.jpg");
+    background-image:stretch;
+    background-repeat:no-repeat;
+    background-image: image(stretch);
+    background-size:100%;
+
+}
+
+#game{
+
+    color:white;
+    text-shadow:3px 3px 3px rgb(241, 32, 224);
+    font-size: 150%;
+
+
+}
+
+#game{
+ position:absolute;
+ top:45%;
+ left:40%;
+ background-color:black;
+ padding: 20px 20px 20px 20px;
+ border:solid 3px rgb(243, 23, 206);
+ word-wrap: wrap;
+}
+
+#you-lose{
+    font-size:200px;
+    color:red;
+    text-align: center;
+}
+
+#you-win{
+    font-size:200px;
+    color:red;
+    text-align:center;
+    
+}
+
+
